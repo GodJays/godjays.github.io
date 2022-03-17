@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>GodJays</title>
+  
+  <subtitle>摸鱼，永无止境。</subtitle>
+  <link href="https://godjays.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://godjays.github.io/"/>
+  <updated>2022-03-14T15:00:48.278Z</updated>
+  <id>https://godjays.github.io/</id>
+  
+  <author>
+    <name>GodJays</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>WMPageController与FDFullscreenPopGesture冲突</title>
+    <link href="https://godjays.github.io/wmpagecontroller-yu-fdfullscreenpopgesture-chong-tu/"/>
+    <id>https://godjays.github.io/wmpagecontroller-yu-fdfullscreenpopgesture-chong-tu/</id>
+    <published>2022-03-13T15:27:46.000Z</published>
+    <updated>2022-03-14T15:00:48.278Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;WMPageController与FDFullscreenPopGesture冲突&quot;&gt;&lt;a href=&quot;#WMPageController与FDFullscreenPopGesture冲突&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Objective-C" scheme="https://godjays.github.io/categories/Objective-C/"/>
+    
+    
+    <category term="Frontend" scheme="https://godjays.github.io/tags/Frontend/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>hexo常用命令笔记</title>
+    <link href="https://godjays.github.io/hexo-chang-yong-ming-ling-bi-ji/"/>
+    <id>https://godjays.github.io/hexo-chang-yong-ming-ling-bi-ji/</id>
+    <published>2022-03-11T13:16:56.000Z</published>
+    <updated>2022-03-13T14:21:27.156Z</updated>
+    
+    
+    <summary type="html">生命在于折腾，又把博客折腾到Hexo了。给Hexo点赞。</summary>
+    
+    
+    
+    <category term="hexo" scheme="https://godjays.github.io/categories/hexo/"/>
+    
+    
+    <category term="hexo" scheme="https://godjays.github.io/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ios-CoreBluetooth</title>
+    <link href="https://godjays.github.io/ios-corebluetooth/"/>
+    <id>https://godjays.github.io/ios-corebluetooth/</id>
+    <published>2022-03-06T13:47:16.000Z</published>
+    <updated>2022-03-16T12:12:13.106Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;iOS蓝牙开发 CoreBluetooth &lt;/h1&gt;
+
+&lt;h2 id=&quot;蓝牙中心设备的实现-蓝牙外设的实现&quot;&gt;&lt;a href=&quot;#蓝牙中心设备的实现-蓝牙外设的实现&quot; class=&quot;headerlink&quot; title=&quot;蓝牙中心设备的实现</summary>
+        
+      
+    
+    
+    
+    <category term="Objective-C" scheme="https://godjays.github.io/categories/Objective-C/"/>
+    
+    
+    <category term="Frontend" scheme="https://godjays.github.io/tags/Frontend/"/>
+    
+  </entry>
+  
+</feed>

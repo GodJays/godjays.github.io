@@ -1,0 +1,1360 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="ios-CoreBluetooth, GodJays">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>ios-CoreBluetooth | GodJays</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.1">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="GodJays" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">GodJays</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">GodJays</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">ios-CoreBluetooth</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Frontend/">
+                                <span class="chip bg-color">Frontend</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Objective-C/" class="post-category">
+                                Objective-C
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2022-03-06
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2022-03-16
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    3.5k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    13 分
+                </div>
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+        <!-- 代码块折行 -->
+        <style type="text/css">
+            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
+        </style>
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1>iOS蓝牙开发 CoreBluetooth </h1>
+
+<h2 id="蓝牙中心设备的实现-蓝牙外设的实现"><a href="#蓝牙中心设备的实现-蓝牙外设的实现" class="headerlink" title="蓝牙中心设备的实现 蓝牙外设的实现"></a>蓝牙中心设备的实现 蓝牙外设的实现</h2><p>iOS蓝牙项目，在开发的过程中简单整理了一些与之相关的基础知识.</p>
+<blockquote>
+<p>1、iOS蓝牙开发的关键词<br>2、蓝牙的简单介绍.<br>3、CoreBluetooth框架.<br>4、实现iOS蓝牙外设 <a target="_blank" rel="noopener" href="https://github.com/remember17/WHBLEDemo">(Demo)</a>.<br>5、实现iOS蓝牙中心设备 <a target="_blank" rel="noopener" href="https://github.com/remember17/WHBLEDemo">(Demo)</a>.  </p>
+</blockquote>
+<p>Demo的运行gif图如下，中心设备可以从外设读取数据，也可以向外设写入数据。外设也可以向中心设备发送数据。<br>PS：需要使用真机测试。<br><img src="/./ios-CoreBluetooth/demoRun.gif" alt="蓝牙外设与中心设备之间的数据传输"></p>
+<br>
+iOS的蓝牙开发是围绕着CoreBluetooth框架来实现的。
+下面先从iOS蓝牙开发的基本概念说起。
+
+<h3 id="一、iOS蓝牙开发的关键词"><a href="#一、iOS蓝牙开发的关键词" class="headerlink" title="一、iOS蓝牙开发的关键词"></a>一、iOS蓝牙开发的关键词</h3><blockquote>
+<p>中心设备：就是用来扫描周围蓝牙硬件的设备，比如通过你手机的蓝牙来扫描并连接智能手环，这时候你的手机就是中心设备。</p>
+<p>外设：被扫描的设备。比如当你用手机的蓝牙扫描连接智能手环的时候，智能手环就是外设。</p>
+</blockquote>
+<p><img src="/./ios-CoreBluetooth/centrlPeripheral.webp" alt="控制机和外设"></p>
+<blockquote>
+<p>广播：就是外设不停的散播蓝牙信号，让中心设备可以扫描到。</p>
+</blockquote>
+<p><img src="/./ios-CoreBluetooth/ad.webp" alt=" 广播"></p>
+<blockquote>
+<p>服务（services）：外设广播和运行的时候会有服务，可以理解成一个功能模块，中心设备可以读取服务。外设可以有多个服务。</p>
+<p>特征（characteristic）：在服务中的一个单位，一个服务可以有多个特征，特征会有一个value，一般读写的数据就是这个value。<br><img src="/./ios-CoreBluetooth/%E6%9C%8D%E5%8A%A1%E5%92%8C%E7%89%B9%E5%BE%81.webp" alt="服务和特征"></p>
+</blockquote>
+<blockquote>
+<p>UUID：区分不同的服务和特征，可以理解为服务和特征的身份证。我们可以用UUID来挑选需要的服务和特征。</p>
+</blockquote>
+<h3 id="二、蓝牙的简单介绍"><a href="#二、蓝牙的简单介绍" class="headerlink" title="二、蓝牙的简单介绍"></a>二、蓝牙的简单介绍</h3><p>偷个懒：<a target="_blank" rel="noopener" href="http://baike.baidu.com/link?url=26A1Z2mNOYQSnmndWMh2bCOA-PxMABVJD1Xae3jRhVVpo3kdCeeOWVqzYNeQbkkrjuUCdTFCpnf9kiuOYGZ3QAjjVIIO9SdDxbZzt9yl1Ny">蓝牙百科</a><br>蓝牙（ Bluetooth® ）：是一种短距离无线通信技术 ，可实现固定设备、移动设备和楼宇个人域网之间的短距离数据交换（使用2.4—2.485GHz的ISM波段的UHF无线电波）。蓝牙4.2发布于2014年12月2日。</p>
+<h3 id="三、CoreBluetooth框架"><a href="#三、CoreBluetooth框架" class="headerlink" title="三、CoreBluetooth框架"></a>三、CoreBluetooth框架</h3><p><img src="/./ios-CoreBluetooth/%E8%93%9D%E7%89%99%E5%BC%80%E5%8F%91%E5%B1%82%E6%AC%A1%E5%9B%BE.webp" alt="蓝牙开发层次图"></p>
+<p>如上图所示，iOS中的蓝牙开发框架CoreBluetooth处在蓝牙低功耗协议栈的上面，我们开发的时候只是使用CoreBluetooth这个框架，通过CoreBluetooth可以轻松实现外设或中心设备的开发。</p>
+<p>CoreBluetooth可以分为两大模块，中心设备central，外设peripheral，它们俩各有自己的一套API供我们使用。</p>
+<p><img src="/./ios-CoreBluetooth/%E4%B8%AD%E5%BF%83%E8%AE%BE%E5%A4%87%E5%92%8C%E5%A4%96%E8%AE%BE%E4%BD%BF%E7%94%A8.webp" alt="中心设备和外设使用"></p>
+<p>上图左边的就是中心设备的开发类，我们平时是使用CBCentralManager来进行相关操作。</p>
+<blockquote>
+<p>CBCentralManager： 蓝牙中心设备管理类，用来统一调度中心设备的开发</p>
+</blockquote>
+<pre class="line-numbers language-Objective-C"><code class="language-Objective-C">* CBPeripheral ：蓝牙外设，例如蓝牙手环、心率监测仪。
+* CBService ：蓝牙外设的服务，可以有0个或者多个服务。
+* CBCharacteristic ：服务中的特征，每一个蓝牙服务中可以有0个或多个特征，特征中包含数据信息。
+* CBUUID：可以理解为服务或特征的身份证，可以用来选择需要的服务和特征。
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>右边是外设开发相关类，一般是围绕着CBPeripheralManager来进行编码。</p>
+<blockquote>
+<p>CBPeripheralManager： 蓝牙外设开发时使用，用来开发蓝牙外设的中心管理类。</p>
+</blockquote>
+<pre class="line-numbers language-Objective-C"><code class="language-Objective-C">* CBCentral：蓝牙中心设备，例如用来连接蓝牙手环的手机。
+* CBMutableService：外设开发的时候可以添加多个服务，所有这里用CBMutableService来创建添加服务。
+* CBMutableCharacteristic：每个服务中可以有多个特征，外设开发给服务添加特征的时候使用这个类。
+* CBATTRequest：读或者写请求。它的实例对象有一个value属性，用来装载外设进行蓝牙读取或写入请求时的数据。一般在外设写入或读取的回调方法中有这一个参数。
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="/./ios-CoreBluetooth/%E5%A4%96%E8%AE%BE%E6%B7%BB%E5%8A%A0%E6%9C%8D%E5%8A%A1%E5%92%8C%E7%89%B9%E5%BE%81.webp" alt="外设添加服务和特征"></p>
+<h3 id="四、实现iOS蓝牙外设-Demo"><a href="#四、实现iOS蓝牙外设-Demo" class="headerlink" title="四、实现iOS蓝牙外设 (Demo)"></a>四、实现iOS蓝牙外设 <a target="_blank" rel="noopener" href="https://github.com/remember17/WHBLEDemo">(Demo)</a></h3><p>  <img src="/./ios-CoreBluetooth/%E5%A4%96%E8%AE%BE%E7%AE%A1%E7%90%86%E5%99%A8.webp" alt="外设管理器"></p>
+<h5>1、首先导入CoreBluetooth框架，并遵守协议</h5> 
+
+
+<pre class="line-numbers language-Objective-C"><code class="language-Objective-C">#import <CoreBluetooth/CoreBluetooth.h>
+// 遵守CBPeripheralManagerDelegate协议
+@interface ViewController () <CBPeripheralManagerDelegate>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h5> 2、创建外设管理对象，用一个属性来强引用这个对象。并且在创建的时候设置代理，声明放到哪个线程。</h5> 
+
+
+<pre class="line-numbers language-Objective-C"><code class="language-Objective-C">@property (nonatomic, strong) CBPeripheralManager *peripheralManager;
+
+// 创建外设管理器，会回调peripheralManagerDidUpdateState方法
+self.peripheralManager = [[CBPeripheralManager alloc] initWithDelegate:self queue:dispatch_get_main_queue()];
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h5>  3、当创建CBPeripheralManager的时候，会回调判断蓝牙状态的方法。当蓝牙状态没问题的时候创建外设的Service（服务）和Characteristics（特征）。</h5> 
+
+
+<pre class="line-numbers language-Objective-C"><code class="language-Objective-C">/*
+ 设备的蓝牙状态
+ CBManagerStateUnknown = 0,  未知
+ CBManagerStateResetting,    重置中
+ CBManagerStateUnsupported,  不支持
+ CBManagerStateUnauthorized, 未验证
+ CBManagerStatePoweredOff,   未启动
+ CBManagerStatePoweredOn,    可用
+ */
+- (void)peripheralManagerDidUpdateState:(CBPeripheralManager *)peripheral {
+    if (peripheral.state == CBManagerStatePoweredOn) {
+        // 创建Service（服务）和Characteristics（特征）
+        [self setupServiceAndCharacteristics];
+        // 根据服务的UUID开始广播
+        [self.peripheralManager startAdvertising:@{CBAdvertisementDataServiceUUIDsKey:@[[CBUUID UUIDWithString:SERVICE_UUID]]}];
+    }
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>可以先用宏来做两个标识字符串，用来创建服务和特征的UUID。<br>最终把创建好的特征放进服务，把服务放入中心管理器。</p>
+<pre class="line-numbers language-Objective-C"><code class="language-Objective-C">#define SERVICE_UUID @"CDD1"
+#define CHARACTERISTIC_UUID @"CDD2"
+
+/** 创建服务和特征 */
+- (void)setupServiceAndCharacteristics {
+    // 创建服务
+    CBUUID *serviceID = [CBUUID UUIDWithString:SERVICE_UUID];
+    CBMutableService *service = [[CBMutableService alloc] initWithType:serviceID primary:YES];
+    // 创建服务中的特征
+    CBUUID *characteristicID = [CBUUID UUIDWithString:CHARACTERISTIC_UUID];
+    CBMutableCharacteristic *characteristic = [
+                                               [CBMutableCharacteristic alloc]
+                                               initWithType:characteristicID
+                                               properties:
+                                               CBCharacteristicPropertyRead |
+                                               CBCharacteristicPropertyWrite |
+                                               CBCharacteristicPropertyNotify
+                                               value:nil
+                                               permissions:CBAttributePermissionsReadable |
+                                               CBAttributePermissionsWriteable
+                                               ];
+    // 特征添加进服务
+    service.characteristics = @[characteristic];
+    // 服务加入管理
+    [self.peripheralManager addService:service];
+    
+    // 为了手动给中心设备发送数据
+    self.characteristic = characteristic;
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>注意CBCharacteristicPropertyNotify这个参数，只有设置了这个参数，在中心设备中才能订阅这个特征。<br>一般开发中可以设置两个特征，一个用来发送数据，一个用来接收中心设备写过来的数据，我们这里为了方便就只设置了一个特征。<br>最后用一个属性拿到这个特征，是为了后面单独发送数据的时候使用，数据的写入和读取最终还是要通过特征来完成。</p>
+<h5>  4、当中心设备读取这个外设的数据的时候会回调这个方法。</h5> 
+
+
+<pre class="line-numbers language-Objective-C"><code class="language-Objective-C">/** 中心设备读取数据的时候回调 */
+- (void)peripheralManager:(CBPeripheralManager *)peripheral didReceiveReadRequest:(CBATTRequest *)request {
+    // 请求中的数据，这里把文本框中的数据发给中心设备
+    request.value = [self.textField.text dataUsingEncoding:NSUTF8StringEncoding];
+    // 成功响应请求
+    [peripheral respondToRequest:request withResult:CBATTErrorSuccess];
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5>  5、当中心设备写入数据的时候，外设会调用下面这个方法。</h5> 
+
+<pre class="line-numbers language-Objective-C"><code class="language-Objective-C">/** 中心设备写入数据的时候回调 */
+- (void)peripheralManager:(CBPeripheralManager *)peripheral didReceiveWriteRequests:(NSArray<CBATTRequest *> *)requests {
+    // 写入数据的请求
+    CBATTRequest *request = requests.lastObject;
+    // 把写入的数据显示在文本框中
+    self.textField.text = [[NSString alloc] initWithData:request.value encoding:NSUTF8StringEncoding];
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5>  6、还有一个主动给中心设备发送数据的方法。</h5> 
+
+
+<pre class="line-numbers language-Objective-C"><code class="language-Objective-C">/** 通过固定的特征发送数据到中心设备 */
+- (IBAction)didClickPost:(id)sender {
+    BOOL sendSuccess = [self.peripheralManager updateValue:[self.textField.text dataUsingEncoding:NSUTF8StringEncoding] forCharacteristic:self.characteristic onSubscribedCentrals:nil];
+    if (sendSuccess) {
+        NSLog(@"数据发送成功");
+    }else {
+        NSLog(@"数据发送失败");
+    }
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5>  7、中心设备订阅成功的时候回调。</h5> 
+
+
+<pre class="line-numbers language-Objective-C"><code class="language-Objective-C">/** 订阅成功回调 */
+-(void)peripheralManager:(CBPeripheralManager *)peripheral central:(CBCentral *)central didSubscribeToCharacteristic:(CBCharacteristic *)characteristic {
+    NSLog(@"%s",__FUNCTION__);
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h5>  8、中心设备取消订阅的时候回调。</h5> 
+
+
+<pre class="line-numbers language-Objective-C"><code class="language-Objective-C">/** 取消订阅回调 */
+-(void)peripheralManager:(CBPeripheralManager *)peripheral central:(CBCentral *)central didUnsubscribeFromCharacteristic:(CBCharacteristic *)characteristic {
+    NSLog(@"%s",__FUNCTION__);
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>以上就是iOS蓝牙外设的基本实现流程，当然还有更多的地方可以进一步处理，这就需要投入更多的时间来学习实验了。</p>
+<hr>
+<p>下面进入iOS蓝牙开发的主要部分，中心设备的实现，这也是手机App通常担任的角色。</p>
+<h3 id="五、实现iOS蓝牙中心设备-Demo"><a href="#五、实现iOS蓝牙中心设备-Demo" class="headerlink" title="五、实现iOS蓝牙中心设备 (Demo)"></a>五、实现iOS蓝牙中心设备 <a target="_blank" rel="noopener" href="https://github.com/remember17/WHBLEDemo">(Demo)</a></h3><p><img src="/./ios-CoreBluetooth/%E4%B8%AD%E5%BF%83%E8%AE%BE%E5%A4%87%E7%AE%A1%E7%90%86%E5%99%A8.webp" alt="中心设备管理器"></p>
+<h5>  1、同外设开发一样，首先要导入CoreBluetooth框架。</h5> 
+
+
+<pre class="line-numbers language-Objective-C"><code class="language-Objective-C">#import <CoreBluetooth/CoreBluetooth.h>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h5>  2、遵守的协议与外设开发不同，中心设备的开发需要遵循如下两个协议。</h5> 
+
+
+<pre class="line-numbers language-Objective-C"><code class="language-Objective-C">@interface ViewController () <CBCentralManagerDelegate,CBPeripheralDelegate>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h5>  3、创建中心管理器并用属性强引用，创建的时候也会设置代理和选择线程。</h5> 
+
+
+<pre class="line-numbers language-Objective-C"><code class="language-Objective-C">@property (nonatomic, strong) CBCentralManager *centralManager;
+
+// 创建中心设备管理器，会回调centralManagerDidUpdateState
+self.centralManager = [[CBCentralManager alloc] initWithDelegate:self queue:dispatch_get_main_queue()];
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h5>  4、当创建中心管理对象的时候，会回调如下方法用来判断中心设备的蓝牙状态。当蓝牙状态没问题的时候，可以根据外设服务的UUID来扫描需要的外设。所以自然而然的就想到了要定义与外设UUID相同的宏。</h5> 
+
+
+<pre class="line-numbers language-Objective-C"><code class="language-Objective-C">/** 判断手机蓝牙状态 */
+#define SERVICE_UUID        @"CDD1"
+#define CHARACTERISTIC_UUID @"CDD2"
+
+
+- (void)centralManagerDidUpdateState:(CBCentralManager *)central {
+    // 蓝牙可用，开始扫描外设
+    if (central.state == CBManagerStatePoweredOn) {
+        NSLog(@"蓝牙可用");
+        // 根据SERVICE_UUID来扫描外设，如果不设置SERVICE_UUID，则扫描所有蓝牙设备
+        [central scanForPeripheralsWithServices:@[[CBUUID UUIDWithString:SERVICE_UUID]] options:nil];
+    }
+    if(central.state==CBCentralManagerStateUnsupported) {
+        NSLog(@"该设备不支持蓝牙");
+    }
+    if (central.state==CBCentralManagerStatePoweredOff) {
+        NSLog(@"蓝牙已关闭");
+    }
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5>  5、当扫描到外设之后，就会回调下面这个方法，可以在这个方法中继续设置筛选条件，例如根据外设名字的前缀来选择，如果符合条件就进行连接。</h5> 
+
+
+<pre class="line-numbers language-Objective-C"><code class="language-Objective-C">/** 发现符合要求的外设，回调 */
+- (void)centralManager:(CBCentralManager *)central didDiscoverPeripheral:(CBPeripheral *)peripheral advertisementData:(NSDictionary<NSString *, id> *)advertisementData RSSI:(NSNumber *)RSSI {
+    // 对外设对象进行强引用
+    self.peripheral = peripheral;
+//    if ([peripheral.name hasPrefix:@"WH"]) {
+//        // 可以根据外设名字来过滤外设
+//        [central connectPeripheral:peripheral options:nil];
+//    }
+    // 连接外设
+    [central connectPeripheral:peripheral options:nil];
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5>  7、当连接成功的时候，就会来到下面这个方法。为了省电，当连接上外设之后，就让中心设备停止扫描，并且别忘记设置连接上的外设的代理。在这个方法里根据UUID进行服务的查找。</h5> 
+
+
+<pre class="line-numbers language-Objective-C"><code class="language-Objective-C">/** 连接成功 */
+- (void)centralManager:(CBCentralManager *)central didConnectPeripheral:(CBPeripheral *)peripheral{
+    // 可以停止扫描
+    [self.centralManager stopScan];
+    // 设置代理
+    peripheral.delegate = self;
+    // 根据UUID来寻找服务
+    [peripheral discoverServices:@[[CBUUID UUIDWithString:SERVICE_UUID]]];
+    NSLog(@"连接成功");
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5>  8、连接失败和断开连接也有各自的回调方法。在断开连接的时候，我们可以设置自动重连，根据项目需求来自定义里面的代码。</h5> 
+
+
+<pre class="line-numbers language-Objective-C"><code class="language-Objective-C">/** 连接失败的回调 */
+-(void)centralManager:(CBCentralManager *)central didFailToConnectPeripheral:(CBPeripheral *)peripheral error:(NSError *)error {
+    NSLog(@"连接失败");
+}
+
+/** 断开连接 */
+- (void)centralManager:(CBCentralManager *)central didDisconnectPeripheral:(CBPeripheral *)peripheral error:(nullable NSError *)error {
+    NSLog(@"断开连接");
+    // 断开连接可以设置重新连接
+    [central connectPeripheral:peripheral options:nil];
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5>  9、下面开始处理代理方法。</h5> 
+&gt;最开始就是发现服务的方法。   
+&gt;这个方法里可以遍历服务，找到需要的服务。由于上面做的外设只有一个服务，所以我这里直接取服务中的最后一个lastObject就行了。
+找到服务之后，连贯的动作继续根据特征的UUID寻找服务中的特征。
+
+
+<pre class="line-numbers language-Objective-C"><code class="language-Objective-C">/** 发现服务 */
+- (void)peripheral:(CBPeripheral *)peripheral didDiscoverServices:(NSError *)error {
+    
+    // 遍历出外设中所有的服务
+    for (CBService *service in peripheral.services) {
+        NSLog(@"所有的服务：%@",service);
+    }
+    
+    // 这里仅有一个服务，所以直接获取
+    CBService *service = peripheral.services.lastObject;
+    // 根据UUID寻找服务中的特征
+    [peripheral discoverCharacteristics:@[[CBUUID UUIDWithString:CHARACTERISTIC_UUID]] forService:service];
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5>  10、下面这个方法里做的事情不少 </h5> 
+&gt;当发现特征之后，与服务一样可以遍历特征，根据外设开发人员给的文档找出不同特征，做出相应的操作。  
+&gt;我的外设只设置了一个特征，所以也是直接通过lastObject拿到特征。
+再重复一遍，一般开发中可以设置两个特征，一个用来发送数据，一个用来接收中心设备写过来的数据。  
+&gt;这里用一个属性引用特征，是为了后面通过这个特征向外设写入数据或发送指令。  
+&gt;readValueForCharacteristic方法是直接读一次这个特征上的数据。
+
+
+<pre class="line-numbers language-Objective-C"><code class="language-Objective-C">/** 发现特征回调 */
+- (void)peripheral:(CBPeripheral *)peripheral didDiscoverCharacteristicsForService:(CBService *)service error:(NSError *)error {
+    
+    // 遍历出所需要的特征
+    for (CBCharacteristic *characteristic in service.characteristics) {
+        NSLog(@"所有特征：%@", characteristic);
+        // 从外设开发人员那里拿到不同特征的UUID，不同特征做不同事情，比如有读取数据的特征，也有写入数据的特征
+    }
+    
+    // 这里只获取一个特征，写入数据的时候需要用到这个特征
+    self.characteristic = service.characteristics.lastObject;
+    
+    // 直接读取这个特征数据，会调用didUpdateValueForCharacteristic
+    [peripheral readValueForCharacteristic:self.characteristic];
+    
+    // 订阅通知
+    [peripheral setNotifyValue:YES forCharacteristic:self.characteristic];
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>setNotifyValue:(BOOL)enabled forCharacteristic:(CBCharacteristic *)characteristic方法是对这个特征进行订阅，订阅成功之后，就可以监控外设中这个特征值得变化了。</p>
+</blockquote>
+<h5>  11、当订阅的状态发生改变的时候，下面的方法就派上用场了。</h5> 
+
+
+<pre class="line-numbers language-Objective-C"><code class="language-Objective-C">/** 订阅状态的改变 */
+-(void)peripheral:(CBPeripheral *)peripheral didUpdateNotificationStateForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error {
+    if (error) {
+        NSLog(@"订阅失败");
+        NSLog(@"%@",error);
+    }
+    if (characteristic.isNotifying) {
+        NSLog(@"订阅成功");
+    } else {
+        NSLog(@"取消订阅");
+    }
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5>  12、外设可以发送数据给中心设备，中心设备也可以从外设读取数据，当发生这些事情的时候，就会回调这个方法。通过特种中的value属性拿到原始数据，然后根据需求解析数据。</h5> 
+
+
+<pre class="line-numbers language-Objective-C"><code class="language-Objective-C">/** 接收到数据回调 */
+- (void)peripheral:(CBPeripheral *)peripheral didUpdateValueForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error {
+    // 拿到外设发送过来的数据
+    NSData *data = characteristic.value;
+    self.textField.text = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5> 13、中心设备可以向外设写入数据，也可以向外设发送请求或指令，当需要进行这些操作的时候该怎么办呢。</h5> 
+
+<ul>
+<li>首先把要写入的数据转化为NSData格式，然后根据上面拿到的写入数据的特征，运用方法writeValue:(NSData *)data forCharacteristic:(CBCharacteristic *)characteristic type:(CBCharacteristicWriteType)type来进行数据的写入。</li>
+<li>当写入数据的时候，系统也会回调这个方法peripheral:(CBPeripheral *)peripheral didWriteValueForCharacteristic:(nonnull CBCharacteristic *)characteristic error:(nullable NSError *)error 。</li>
+</ul>
+<pre class="line-numbers language-Objective-C"><code class="language-Objective-C">
+/** 写入数据 */
+- (IBAction)didClickPost:(id)sender {
+    // 用NSData类型来写入
+    NSData *data = [self.textField.text dataUsingEncoding:NSUTF8StringEncoding];
+    // 根据上面的特征self.characteristic来写入数据
+    [self.peripheral writeValue:data forCharacteristic:self.characteristic type:CBCharacteristicWriteWithResponse];
+}
+
+
+/** 写入数据回调 */
+- (void)peripheral:(CBPeripheral *)peripheral didWriteValueForCharacteristic:(nonnull CBCharacteristic *)characteristic error:(nullable NSError *)error {
+    NSLog(@"写入成功");
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5>  14、中心设备如何主动从外设读取数据呢。</h5> 
+
+
+<pre class="line-numbers language-Objective-C"><code class="language-Objective-C">/** 读取数据 */
+- (IBAction)didClickGet:(id)sender {
+    [self.peripheral readValueForCharacteristic:self.characteristic];
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>中心设备的开发是需要配合外设来进行的，一般会有硬件工程师或嵌入式工程师给出通信协议，根据协议来对项目的各种需求进行操作。</p>
+</blockquote>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">GodJays</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://godjays.github.io/ios-corebluetooth/">https://godjays.github.io/ios-corebluetooth/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">GodJays</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Frontend/">
+                                    <span class="chip bg-color">Frontend</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/hexo-chang-yong-ming-ling-bi-ji/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="hexo常用命令笔记">
+                        
+                        <span class="card-title">hexo常用命令笔记</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-03-11
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/hexo/" class="post-category">
+                                    hexo
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/hexo/">
+                        <span class="chip bg-color">hexo</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                本篇&nbsp;<i class="far fa-dot-circle"></i>
+            </div>
+            <div class="card">
+                <a href="/ios-corebluetooth/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="ios-CoreBluetooth">
+                        
+                        <span class="card-title">ios-CoreBluetooth</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-06
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Objective-C/" class="post-category">
+                                    Objective-C
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Frontend/">
+                        <span class="chip bg-color">Frontend</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2021-2022</span>
+            
+
+            <a href="/about" target="_blank">GodJays</a>
+            |&nbsp;&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">3.9k</span>&nbsp;字
+            
+            
+            
+
+<!-- 
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+-->
+
+            <!--
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            -->
+
+
+    <script>
+     $(document).ready(function () { 
+         var int = setInterval(fixCount, 50); // 50ms周期检测函数 var pvcountOffset = 80000; // 初始化首次数据 
+         var uvcountOffset = 20000; 
+
+         function fixCount() { if ( 
+            document.getElementById("busuanzi_container_site_pv").style.display != "none") {     
+            $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + pvcountOffset); clearInterval(int); 
+         } 
+         if ($("#busuanzi_container_site_pv").css("display") != "none") { 
+            $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + uvcountOffset); // 加上初始数据 clearInterval(int); // 停止检测
+          } 
+        } 
+     });
+    </script>
+
+
+
+
+
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link ">
+    <a href="https://github.com/GodJays" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+<!--
+
+
+
+
+
+
+
+
+
+
+
+
+
+-->
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+    
+    <script src="/js/FunnyTitle.js"></script>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+
+    
+
+    
+
+	
+    
+
+    
+    
+    <script type="text/javascript" size="150" alpha='0.6'
+        zIndex="-1" src="/libs/background/ribbon-refresh.min.js" async="async"></script>
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/miku.model.json"},"display":{"superSample":2,"width":250,"height":500,"position":"right","hOffset":20,"vOffset":-10},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2}});</script></body>
+
+</html>
